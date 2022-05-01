@@ -59,19 +59,17 @@
                   </tr>
                   </thead>
                   <tbody id="tbody1" class="divide-y divide-gray-100">
-                  <!-- <tr class="bg-white">
+                  <tr class="bg-white">
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                      <a href="#" class="font-bold text-blue-500 hover:underline">2022-04-11 13:48:26</a>
+                      <a href="#" class="font-bold text-blue-500 hover:underline></a>
                     </td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap"></td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap"></td>          
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap"></td>
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                     Bala ganesh
+                        <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"></span>
                     </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">1</td>          
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">Masked</td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                        <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">Present</span>
-                    </td>
-                  </tr> -->
+                  </tr>
                   <!-- <tr class="bg-gray-50">
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
                       <a href="#" class="font-bold text-blue-500 hover:underline">2022-04-11 13:48:26</a>
@@ -198,7 +196,7 @@ function AddAllItemsToTable(TheStudent) {
   stdNo = 0
   tbody.innerHTML = ''
   TheStudent.forEach(element => {
-    AddItemToTable(element.name, element.face_id, element.mask, element.status)
+    AddItemToTable(element.name, element.face_id, element.mask , element.status)
   });
 }
 
