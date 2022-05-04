@@ -5,26 +5,23 @@ import urllib.request
 import pyrebase
 
 # thingspeak
-date = str(input("enter date : "))
-date = date.replace(' ', "%20")
-date = date.replace('\n', "%0A")
-name = str(input("enter your name : "))
-name = name.replace(' ', "%20")
-name = name.replace('\n', "%0A")
-face = str(input("Enter your Face ID : "))
-face = face.replace(' ', "%20")
-face = face.replace('\n', "%0A")
-mask = str(input("Enter your mask : "))
-mask = mask.replace(' ', "%20")
-mask = mask.replace('\n', "%0A")
-status = str(input("Enter your status : "))
-status = status.replace(' ', "%20")
-status = status.replace('\n', "%0A")
+x = str(input("enter card id : "))
+x = x.replace(' ', "%20")
+x = x.replace('\n', "%0A")
+usr = str(input("enter your name : "))
+usr = usr.replace(' ', "%20")
+usr = usr.replace('\n', "%0A")
+f = str(input("Enter your Face ID : "))
+f = f.replace(' ', "%20")
+f = f.replace('\n', "%0A")
+m = str(input("Enter your mask : "))
+m = m.replace(' ', "%20")
+m = m.replace('\n', "%0A")
 
 # msg = str(input('Enter your message : '))
 # msg = msg.replace(' ', "%20")
 # msg = msg.replace('\n', "%0A")
-b = urllib.request.urlopen('https://api.thingspeak.com/update?api_key=RL2RLT93U16LUYS5&field1=0'+date+name+face+mask+status)
+b = urllib.request.urlopen('https://api.thingspeak.com/update?api_key=RL2RLT93U16LUYS5&field1=0'+x+usr+f+m)
 print("\nYour message has successfully been sent!")
 
 # firebase data
@@ -60,7 +57,7 @@ firebase = pyrebase.initialize_app(firebaseConfig)
 
 db = firebase.database()
 
-data = {'date': date, 'name': name, 'face_id': face, 'mask': mask, 'status': status}
+data = {'card_id': x, 'name': usr, 'face_id': f, 'mask': m}
 db.child('Attendance').push(data)
 
 
