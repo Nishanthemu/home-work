@@ -196,7 +196,7 @@ function AddAllItemsToTable(TheStudent) {
   stdNo = 0
   tbody.innerHTML = ''
   TheStudent.forEach(element => {
-    AddItemToTable(element.card_id, element.name, element.face_id , element.mask)
+    AddItemToTable(element.card_id, element.name, element.face_id , element.mask_status)
   });
 }
 
