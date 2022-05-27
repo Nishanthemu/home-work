@@ -27,6 +27,15 @@
         </div>
       </div>
       <div id="user_div" class="min-h-screen bg-gray-100 text-gray-800 antialiased px-4 flex flex-col justify-center sm:py-12 shadow-2xl">
+        <div class="ml-10">
+          <button class="bg-indigo-500 text-white px-4 py-2 rounded" id="menu-btn">Date</button>
+          
+          <div class="bg-gray-200 hidden flex-col rounded mt-1 p-2 text-sm w-32" id="dropdown">
+              <a href="#" class="px-2 py-1 hover:bg-indigo-500 rounded">26/05/2022</a>
+              <a href="#" id="display" class="px-2 py-1 hover:bg-indigo-500 rounded">27/05/2022</a>
+              <a href="#" class="px-2 py-1 hover:bg-indigo-500 rounded">28/05/2022</a>
+          </div>
+        </div>
         <div class="relative py-3 sm:max-w-xl mx-auto text-center"> 
           <span class="text-2xl font-light">Welcome</span>
           <div class="relative mt-4 bg-white shadow-md sm:rounded-lg text-left">
@@ -58,18 +67,18 @@
                     <th class="w-32 p-3 text-sm font-semibold tracking-wide text-left">Status</th>
                   </tr>
                   </thead>
-                  <tbody id="tbody1" class="divide-y divide-gray-100">
+                  <tbody id="tbody1"  class="divide-y divide-gray-100">
                   <tr class="bg-white">
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                      <a href="#" class="font-bold text-blue-500 hover:underline></a>
+                      <a href="#" class="font-bold text-blue-500 hover:underline">h</a>
                     </td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap"></td>
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap"></td>          
-                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap"></td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">hh</td>
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">nsiahnth</td>          
+                    <td class="p-3 text-sm text-gray-700 whitespace-nowrap">maked</td>
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-                        <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"></span>
+                        <span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50">present</span>
                     </td>
-                  </tr>
+                  </tr> 
                   <!-- <tr class="bg-gray-50">
                     <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
                       <a href="#" class="font-bold text-blue-500 hover:underline">2022-04-11 13:48:26</a>
@@ -95,7 +104,6 @@
                   </tbody>
                 </table>
               </div>
-            </div>
         </div>
 </body>
 <script type="module">
@@ -117,9 +125,15 @@
     let loginbtn = document.getElementById("login")
     let logoutbtn = document.getElementById("logout")
     let downloadbtn = document.getElementById("exportData")
+    let displaybtn = document.getElementById("display")
     const db = getDatabase(app);
     const auth = getAuth()
     const user = auth.currentUser;
+
+    displaybtn.addEventListener("click", () => {
+        document.getElementById("displaytable").style.display = "flex"; 
+        console.log('clicked');
+    });
 
     loginbtn.addEventListener("click", () => {
       let inputEmail = document.getElementById("input-email").value
@@ -227,5 +241,16 @@ function GetAllDataRealtime() {
   })
 }
 window.onload = GetAllDataRealtime
+
+window.addEventListener('DOMContentLoaded', ()=> {
+            const menuBtn = document.querySelector('#menu-btn')
+            const dropdown = document.querySelector('#dropdown')
+            
+            menuBtn.addEventListener('click', () => {
+                dropdown.classList.toggle('hidden')
+                dropdown.classList.toggle('flex')
+            })
+
+        })
 </script>
 </html>
